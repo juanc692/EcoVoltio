@@ -97,7 +97,7 @@ private fun UsageChartCard(period: Period) {
     val data = if (period == Period.WEEK) MockData.weekUsage else MockData.monthUsage
     val labels = data.map { it.first }
     val bottomFormatter = remember(labels) {
-        CartesianValueFormatter { _, x, _ -> labels.getOrElse(x.toInt()) { "" } }
+        CartesianValueFormatter { _, x, _ -> labels.getOrElse(x.toInt()) { x.toInt().toString()} }
     }
     val modelProducer = remember { CartesianChartModelProducer() }
 

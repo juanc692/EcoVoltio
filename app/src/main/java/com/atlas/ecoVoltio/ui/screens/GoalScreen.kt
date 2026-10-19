@@ -1,5 +1,6 @@
 package com.atlas.ecoVoltio.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -42,7 +43,8 @@ fun GoalsScreen(modifier: Modifier = Modifier) {
                 fontSize = 13.sp,
                 modifier = Modifier.weight(1f)
             )
-            NewGoalButton(onClick = { /* pendiente: formulario de nueva meta */ })
+            //NewGoalButton(onClick = { /* pendiente: formulario de nueva meta */ })
+            NewGoalButton()
         }
 
         goals.forEach { GoalCard(it) }
@@ -50,12 +52,14 @@ fun GoalsScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun NewGoalButton(onClick: () -> Unit) {
+private fun NewGoalButton() {
     Row(
         modifier = Modifier
             .clip(RoundedCornerShape(9.dp))
             .background(Energy)
-            .clickable(onClick = onClick)
+            .clickable{
+                createGoal()
+            }
             .padding(horizontal = 12.dp, vertical = 7.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -73,3 +77,7 @@ private fun MetasScreenPreview() {
     }
 }
 
+fun createGoal()
+{
+    Log.e("GoalDebug","Creando goal")
+}
