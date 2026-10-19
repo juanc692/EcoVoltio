@@ -24,20 +24,22 @@ import com.atlas.ecoVoltio.data.model.SmartPlug
 import com.atlas.ecoVoltio.ui.theme.*
 
 // El modelo dice QUÉ es; la UI decide CÓMO se ve.
-private fun DeviceType.icon(): ImageVector = when (this) {
+fun DeviceType.icon(): ImageVector = when (this) {
     DeviceType.AIR_CONDITIONER -> Icons.Filled.AcUnit
     DeviceType.FRIDGE -> Icons.Filled.Kitchen
     DeviceType.WATER_HEATER -> Icons.Filled.Whatshot
     DeviceType.WASHER -> Icons.Filled.LocalLaundryService
     DeviceType.TV -> Icons.Filled.Tv
+    DeviceType.OTHER -> Icons.Filled.Power
 }
 
-private fun DeviceType.accent(): Color = when (this) {
+fun DeviceType.accent(): Color = when (this) {
     DeviceType.AIR_CONDITIONER -> Energy
     DeviceType.FRIDGE -> Savings
     DeviceType.WATER_HEATER -> Overlimit
     DeviceType.WASHER -> Color(0xFF7B93FF)
     DeviceType.TV -> Color(0xFFB98CE0)
+    DeviceType.OTHER -> TextSecondary
 }
 
 @Composable

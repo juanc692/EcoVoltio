@@ -12,4 +12,4 @@ data class SmartPlug(
 )
 
 enum class PlugStatus {ONLINE,OFFLINE}
-enum class DeviceType { AIR_CONDITIONER, FRIDGE, WATER_HEATER, WASHER, TV}
+enum class DeviceType { AIR_CONDITIONER, FRIDGE, WATER_HEATER, WASHER, TV, OTHER}

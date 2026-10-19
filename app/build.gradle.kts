@@ -38,6 +38,8 @@ android {
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
+    implementation("com.patrykandpatrick.vico:compose:3.3.1")
+    implementation("androidx.navigation:navigation-compose:2.9.8")
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
